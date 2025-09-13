@@ -20,7 +20,7 @@ def play_sound():
             <source src="data:audio/mp3;base64,{sound_data}" type="audio/mp3">
         </audio>
     """
-    with open(r"C:\Users\sriha\Desktop\proctorvision\siren-alert-96052.mp3", "rb") as f:
+    with open(r"https://res.cloudinary.com/dzsbxzjqe/video/upload/v1757744930/siren-alert-96052_pkxwxj.mp3", "rb") as f:
         b64_sound = base64.b64encode(f.read()).decode()
         st.markdown(sound_html.format(sound_data=b64_sound), unsafe_allow_html=True)
 
@@ -208,5 +208,6 @@ if st.session_state.run:
             stats_placeholder.line_chart(st.session_state.fps_history)
 
         stframe.image(display_frame, channels="BGR")
+
 
     cap.release()
